@@ -19,6 +19,9 @@ while True:
         print("Failed to grab frame")
         break
 
+        # Rotate the frame 180 degrees
+    frame = cv2.rotate(frame, cv2.ROTATE_180)
+
     cv2.imshow('USB Camera', frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):

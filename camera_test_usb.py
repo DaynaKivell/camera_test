@@ -16,7 +16,13 @@ cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 cap.set(cv2.CAP_PROP_FPS, 30)  # Set to 30 FPS
 
-print("Camera properties set.")
+# Verify camera properties
+width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+fps = cap.get(cv2.CAP_PROP_FPS)
+fourcc = cap.get(cv2.CAP_PROP_FOURCC)
+
+print(f"Camera properties set: width={width}, height={height}, fps={fps}, fourcc={fourcc}")
 
 # Create a named window
 cv2.namedWindow('USB Camera', cv2.WINDOW_NORMAL)

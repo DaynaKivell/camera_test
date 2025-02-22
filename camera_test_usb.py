@@ -13,7 +13,7 @@ if not cap.isOpened():
     print("Error: Could not open camera.")
     exit()
 
-    # Create a named window
+# Create a named window
 cv2.namedWindow('USB Camera', cv2.WINDOW_NORMAL)
 
 # Resize the window

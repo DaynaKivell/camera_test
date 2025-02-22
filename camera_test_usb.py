@@ -21,8 +21,9 @@ width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
 height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 fps = cap.get(cv2.CAP_PROP_FPS)
 fourcc = cap.get(cv2.CAP_PROP_FOURCC)
+fourcc_str = "".join([chr((int(fourcc) >> 8 * i) & 0xFF) for i in range(4)])
 
-print(f"Camera properties set: width={width}, height={height}, fps={fps}, fourcc={fourcc}")
+print(f"Camera properties set: width={width}, height={height}, fps={fps}, fourcc={fourcc_str}")
 
 # Create a named window
 cv2.namedWindow('USB Camera', cv2.WINDOW_NORMAL)
@@ -34,6 +35,7 @@ print("Starting capture loop...")
 
 while True:
     ret, frame = cap.read()
+    print(f"Frame capture status: {ret}")
     if not ret:
         print("Failed to grab frame")
         break

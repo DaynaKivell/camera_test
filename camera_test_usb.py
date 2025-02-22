@@ -13,6 +13,9 @@ if not cap.isOpened():
     print("Error: Could not open camera.")
     exit()
 
+# Create a named window with the ability to resize
+cv2.namedWindow('USB Camera', cv2.WINDOW_NORMAL)
+
 while True:
     ret, frame = cap.read()
     if not ret:
